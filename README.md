@@ -29,7 +29,7 @@ Once you have the Dockerfile on your machine, enter to its directory and build t
 docker build -t evb_image:latest .
 ```
 
-This will build the virtual machine (Linux Ubuntu 18.04) with the following programs:
+This will build the virtual machine `evb_image` with the tag `latest`. It is a Linux Ubuntu 18.04 operating system with the following programs:
 - [Python](https://www.python.org/) - efficient high-level programming language
 - [Jupyter Notebook](https://jupyter.org/) - server-client application that allows editing and running notebook documents via a web browser
 - [Amber/AmberTools](https://ambermd.org/index.php) - biomolecular simulation program package
