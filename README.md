@@ -46,7 +46,7 @@ You can run the image inside of a container by using [`docker run`](https://docs
 docker run --name=evb_container --ulimit stack=-1 --publish=9999:9999 --entrypoint /bin/bash --workdir="/home/EVB_tutorial" --rm -it evb_image:latest
 ```
 
-In the above command, with the `--name` flag we name the container (as `evb_container`), `--ulimit stack=-1` will set the stack space unlimited (this is equivalent to run `ulimit -s unlimited` on Linux and required to run XdynBP nicely), `--publish=9999:9999` publishes the port 9999 of the container to the port 9999 of the host (this will be used to access the notebook outside of the container), with `--entrypoint /bin/bash` we use bash, `--workdir="/home/EVB_tutorial"` specifies the directory we enter, `--rm` removes the container if exists and `-it` makes sure we can use the container interactively.
+In the above command, with the `--name` flag we name the container (as `evb_container`), `--ulimit stack=-1` will set the stack space unlimited (this is equivalent to run `ulimit -s unlimited` on Linux and required to run XdynBP nicely), `--publish=9999:9999` publishes the port 9999 of the container to the port 9999 of the host (this will be used to access the notebook outside of the container), with `--entrypoint /bin/bash` we use the bash shell, `--workdir="/home/EVB_tutorial"` specifies the directory we enter, `--rm` removes the container if exists and `-it` makes sure we can use the container interactively.
 
 ## Useful Docker Commands
 
