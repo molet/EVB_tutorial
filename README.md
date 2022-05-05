@@ -66,11 +66,13 @@ docker cp evb_container:/home/EVB_tutorial/Tutorial/01.Preparation/KE07_R7_B__DE
 
 ## Running Jupyter Notebook from a Docker Container
 
-We will use the [Jupyter Notebook](https://jupyter.org/) to run and analyze our simulations interactively from a Docker container. Once you are running a container as described above, you can start a notebook:
+We will use the [Jupyter Notebook](https://jupyter.org/) to run and analyze our simulations interactively from a Docker container. Once you are running a container as described above, you can start a notebook in the working directory (`/home/EVB_tutorial`):
 
-```ipython notebook --no-browser --ip=0.0.0.0 --port=9999 --allow-root```
+```
+ipython notebook --no-browser --ip=0.0.0.0 --port=9999 --allow-root
+```
 
-After the server started, it should print out at the end something like this:
+After the server started, it should print out something like this:
 
 ```
     To access the notebook, open this file in a browser:
@@ -80,3 +82,4 @@ After the server started, it should print out at the end something like this:
      or http://127.0.0.1:9999/?token=a14df6b6eef9000f985dda1997336767fb0ef184bdd1a31c
 ```
 
+If you copy and paste any of these URLs in your browser (your actual URLs will be different from the above example), you should have access to the notebooks in the container.
