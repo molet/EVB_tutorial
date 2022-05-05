@@ -36,12 +36,39 @@ Depending on your machine and internet connection, the image should be built wit
 
 You can run the image inside of a container by using [`docker run`](https://docs.docker.com/engine/reference/commandline/run/):
 
-`docker run --name=evb --ulimit stack=-1 --publish=9999:9999 --entrypoint /bin/bash --workdir="/home/EVB_tutorial" --rm -it evb_image:latest`
+`docker run --name=evb_container --ulimit stack=-1 --publish=9999:9999 --entrypoint /bin/bash --workdir="/home/EVB_tutorial" --rm -it evb_image:latest`
 
-In the above command, with the `--name` flag we name the container (as `evb`), `--ulimit stack=-1` will set the stack unlimited (this is equivalent to run `ulimit -s unlimited` on Linux and required to run XdynBP nicely), `--publish=9999:9999` publishes the port 9999 of the container to the port 9999 of the host (this will be used to access the notebook outside of the container), with `--entrypoint /bin/bash` we use bash, `--workdir="/home/EVB_tutorial"` specifies the directory we enter, `--rm` removes the container if exists and `-it` makes sure we can use the container interactively.
+In the above command, with the `--name` flag we name the container (as `evb_container`), `--ulimit stack=-1` will set the stack unlimited (this is equivalent to run `ulimit -s unlimited` on Linux and required to run XdynBP nicely), `--publish=9999:9999` publishes the port 9999 of the container to the port 9999 of the host (this will be used to access the notebook outside of the container), with `--entrypoint /bin/bash` we use bash, `--workdir="/home/EVB_tutorial"` specifies the directory we enter, `--rm` removes the container if exists and `-it` makes sure we can use the container interactively.
 
 ## Useful Docker Commands
 
-Once a container is running, you can run a new command by `docker exec`. For instance, if you already started the container by the above `docker run` command then you enter it interactively from another terminal by typing:
+Use [`docker images`](https://docs.docker.com/engine/reference/commandline/images/) and [`docker ps`](https://docs.docker.com/engine/reference/commandline/ps/) to list images and containers on your machine.
 
-`docker exec `
+Once a container is running, you can run a new command by [`docker exec`](https://docs.docker.com/engine/reference/commandline/exec/). For instance, if you already started the container by the above `docker run` command then you can enter it interactively from another terminal by typing:
+
+`docker exec -it evb_container /bin/bash`
+
+It is important to note that once you finish running a command (e.g. stop and exit the container) then all data and changes you made in the container will be lost. In order to save your changes, you can create a new image from the container by the [`docker commit`](https://docs.docker.com/engine/reference/commandline/commit/) command:
+
+`docker commit evb_container evb_images:new`
+
+We cannot directly access the files and folders in a container from our local filesystem. However, if required, files and folders can be copied between the container and local filesystem by the [`docker cp`](https://docs.docker.com/engine/reference/commandline/cp/) command. For example, if you run the `evb_container` then the starting PDB file can copied to your local folder by typing:
+
+`docker cp evb_container:/home/EVB_tutorial/Tutorial/01.Preparation/KE07_R7_B__DE_1.pdb .`
+
+## Running Jupyter Notebook from a Docker Container
+
+We will use the [Jupyter Notebook](https://jupyter.org/) to run and analyze our simulations interactively from a Docker container. Once you are running a container as described above, you can start a notebook:
+
+`ipython notebook --no-browser --ip=0.0.0.0 --port=9999 --allow-root`
+
+After the server started, it should print out at the end something like this:
+
+```
+    To access the notebook, open this file in a browser:
+        file:///root/.local/share/jupyter/runtime/nbserver-92-open.html
+    Or copy and paste one of these URLs:
+        http://01109c22e8b6:9999/?token=a14df6b6eef9000f985dda1997336767fb0ef184bdd1a31c
+     or http://127.0.0.1:9999/?token=a14df6b6eef9000f985dda1997336767fb0ef184bdd1a31c
+```
+
