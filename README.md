@@ -17,11 +17,17 @@ Congratulations, you have Docker on your machine!
 
 ## Build the Docker Image
 
-Download the [Dockerfile](https://github.com/molet/EVB_tutorial/blob/main/Dockerfile) provided within this repository. You can either copy the raw content and save it with the same filename on your machine, or use [Git](https://git-scm.com/downloads) and clone the repository: `git clone https://github.com/molet/EVB_tutorial.git`.
+Download the [Dockerfile](https://github.com/molet/EVB_tutorial/blob/main/Dockerfile) provided within this repository. You can either copy the raw content and save it with the same filename on your machine, or use [Git](https://git-scm.com/downloads) and clone the repository:
+
+```
+git clone https://github.com/molet/EVB_tutorial.git
+```
 
 Once you have the Dockerfile on your machine, enter to its directory and build the image by typing:
 
-`docker build -t evb_image:latest .`
+```
+docker build -t evb_image:latest .
+```
 
 This will build the virtual machine (Linux Ubuntu 18.04) with the following programs:
 - [Python](https://www.python.org/) - efficient high-level programming language
