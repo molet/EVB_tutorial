@@ -89,3 +89,14 @@ After the server started, it should print out something like this:
 ```
 
 If you copy and paste any of these URLs in your browser (your actual URLs will be different from the above example), you should have access to the notebooks in the container.
+
+## Content of the Working Directory
+
+The working directory contains the following subdirectories:
+- `Programs` includes the installed softwares.
+- `Tutorial` includes the input files for the EVB simulations. You can play with preparing inputs, running simulations and analyzing outputs here.
+- `Tutorial_completed` includes the input and output files for the EVB simulations. Some steps of the simulations may take a longer time so you will not need to run everything but can access all the results here.
+
+## Visualizing the MD Results
+
+For visualization of the system and trajectories the [VMD](https://www.ks.uiuc.edu/Research/vmd/) program is recommended. It is free and you can download it from [here](https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD).
