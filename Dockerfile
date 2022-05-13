@@ -7,6 +7,7 @@ RUN apt-get -y upgrade
 RUN apt-get install -y build-essential
 
 # Install basic programs
+RUN apt install -y tree
 RUN apt install -y wget
 RUN apt install -y vim
 RUN apt install -y cmake
@@ -48,7 +49,7 @@ RUN conda install -y -c conda-forge ambertools
 RUN conda install -y -c conda-forge/label/cf202003 ambertools
 ENV AMBERHOME /home/EVB_tutorial/Programs/miniconda3
 
-# Install CATS
+# Install CATs
 RUN gdown 1uTkETEarWXRL-2RQnSMhZRrsYDEFa6TX
 RUN tar -xvzf cats.tar.gz
 ENV PATH $PATH:/home/EVB_tutorial/Programs/cats
@@ -59,5 +60,16 @@ RUN tar -xvzf xdynbp.tar.gz
 WORKDIR /home/EVB_tutorial/Programs/xdynbp
 RUN make
 ENV PATH $PATH:/home/EVB_tutorial/Programs/xdynbp/bin
+
+WORKDIR /home/EVB_tutorial
+
+# Download notebooks & figures
+RUN gdown 15XjNX5MGnWDBCKFbNiQH6HLRFf-G_GhR
+RUN gdown 1-4ABVORgmbQeJSH1bMCRKJ95ibfoGR3x 
+
+RUN mkdir -p figures
+WORKDIR figures
+RUN gdown 1Sjm0i8UhlfbqhBmqzRGTPds1BIDA6YWr
+RUN gdown 16_70iu77LnAAQWFjCCUIV265YK4k3ygv
 
 WORKDIR /home/EVB_tutorial
