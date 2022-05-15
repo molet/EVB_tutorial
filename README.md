@@ -92,10 +92,14 @@ If you copy and paste any of these URLs in your browser (your actual URLs will b
 
 ## Content of the Working Directory
 
-The working directory contains the following subdirectories:
-- `Programs` includes the installed softwares.
-- `Tutorial` includes the input files for the EVB simulations. You can play with preparing inputs, running simulations and analyzing outputs here.
-- `Tutorial_completed` includes the input and output files for the EVB simulations. Some steps of the simulations may take a longer time so you will not need to run everything but can access all the results here.
+The working directory contains the followings:
+- `Programs` subdirectory includes the installed softwares.
+- `Tutorial` subdirectory includes the input files for the EVB simulations. You can play with preparing inputs, running simulations and analyzing outputs here.
+- `Tutorial_completed` subdirectory includes the input and output files for the EVB simulations. Some steps of the simulations may take a longer time so you will not need to run everything but can access all the results here.
+- `figures` subdirectory includes some figures for the jupyter notebooks
+- Notebooks:
+	- `0-Introduction.ipynb`
+	- `1-Preparation.ipynb`
 
 ## Visualizing the MD Results
 
