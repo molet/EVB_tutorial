@@ -7,12 +7,13 @@ RUN apt-get -y upgrade
 RUN apt-get install -y build-essential
 
 # Install basic programs
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt install -y tree
 RUN apt install -y wget
 RUN apt install -y vim
 RUN apt install -y cmake
 RUN apt install -y git
-RUN apt install -y python3-venv python3-pip python3-dev
+RUN apt install -y python3-venv python3-pip python3-dev python3-numpy python3-matplotlib
 
 # Install ipython, jupyter and gdown by pip
 RUN pip3 install ipython
