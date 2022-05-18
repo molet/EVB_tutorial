@@ -67,10 +67,14 @@ WORKDIR /home/EVB_tutorial
 # Download notebooks & figures
 RUN gdown 15XjNX5MGnWDBCKFbNiQH6HLRFf-G_GhR
 RUN gdown 1-4ABVORgmbQeJSH1bMCRKJ95ibfoGR3x 
+RUN gdown 194JSUItM4bb754rdlA8bMF2HZOPkQvEc
+RUN gdown 1sYwrLqC-rMm1mamuZYHOVOHnLNeZ-oWY
 
 RUN mkdir -p figures
 WORKDIR figures
 RUN gdown 1Sjm0i8UhlfbqhBmqzRGTPds1BIDA6YWr
 RUN gdown 16_70iu77LnAAQWFjCCUIV265YK4k3ygv
+RUN gdown 134cF0dRJIezDyGJizsWAGMnAVAv4bgnt
+RUN gdown 1SzJ38FwBq6JYBhzfouDqkGCBKMFcgf7D
 
 WORKDIR /home/EVB_tutorial

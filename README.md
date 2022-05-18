@@ -23,6 +23,8 @@ Download the [Dockerfile](https://github.com/molet/EVB_tutorial/blob/main/Docker
 git clone https://github.com/molet/EVB_tutorial.git
 ```
 
+You can update the contents of the repository on you machine by typing `git pull` after entering `EVB_tutorial`.
+
 Once you have the Dockerfile on your machine, enter to its directory and build the image by typing:
 
 ```
@@ -100,6 +102,8 @@ The working directory (`/home/EVB_tutorial`) contains the followings:
 - Notebooks:
 	- `0-Introduction.ipynb`
 	- `1-Preparation.ipynb`
+	- `2-Equilibration.ipynb`
+	- `3-Reaction.ipynb`
 
 ## Visualizing the MD Results
 
