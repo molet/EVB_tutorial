@@ -79,7 +79,7 @@ docker cp evb_container:/home/EVB_tutorial/Tutorial/01.Preparation/KE07_R7_B__DE
 We will use the [Jupyter Notebook](https://jupyter.org/) to run and analyze our simulations interactively from a Docker container. Once you are running a container as described above, you can start a notebook in the working directory (`/home/EVB_tutorial`):
 
 ```
-ipython notebook --no-browser --ip=0.0.0.0 --port=9999 --allow-root
+jupyter notebook --no-browser --ip=0.0.0.0 --port=9999 --allow-root
 ```
 
 After the server started, it should print out something like this:
