@@ -1,5 +1,5 @@
-# Ubuntu 18.04 LTS
-FROM ubuntu:18.04
+# Ubuntu 22.04 LTS
+FROM ubuntu:22.04
 
 # Updates & essential
 RUN apt-get -y update
@@ -8,11 +8,7 @@ RUN apt-get install -y build-essential
 
 # Install basic programs
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get install -y tree
-RUN apt-get install -y wget
-RUN apt-get install -y vim
-RUN apt-get install -y cmake
-RUN apt-get install -y git
+RUN apt-get install -y tree wget vim cmake git
 RUN apt-get install -y python3-venv python3-pip python3-dev python3-numpy python3-matplotlib
 
 # Install ipython, jupyter and gdown by pip
