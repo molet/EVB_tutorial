@@ -5,6 +5,8 @@ This repository includes a guide to download and install all necessary softwares
 In order to avoid compilation issues on different architectures and operating systems, we will use [Docker](https://docs.docker.com/get-started/overview/).
 Docker provides a lightweight and fast virtual machine on which we can run the corresponding programs (for more information visit the [Docker documentation](https://docs.docker.com/)).
 
+NOTE: Apple M1 series is currently not supported.
+
 ## Install Docker
 
 1. [Download and install Docker](https://docs.docker.com/get-docker/) for your corresponding platform. For [Mac](https://docs.docker.com/desktop/mac/install/) and [Windows](https://docs.docker.com/desktop/windows/install/) it is the Docker Desktop, while for [Linux](https://docs.docker.com/engine/install/) it is the Docker Engine.
