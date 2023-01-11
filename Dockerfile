@@ -8,12 +8,12 @@ RUN apt-get install -y build-essential
 
 # Install basic programs
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt install -y tree
-RUN apt install -y wget
-RUN apt install -y vim
-RUN apt install -y cmake
-RUN apt install -y git
-RUN apt install -y python3-venv python3-pip python3-dev python3-numpy python3-matplotlib
+RUN apt-get install -y tree
+RUN apt-get install -y wget
+RUN apt-get install -y vim
+RUN apt-get install -y cmake
+RUN apt-get install -y git
+RUN apt-get install -y python3-venv python3-pip python3-dev python3-numpy python3-matplotlib
 
 # Install ipython, jupyter and gdown by pip
 RUN pip3 install --upgrade pip
@@ -48,7 +48,6 @@ RUN conda update -y -n base -c defaults conda
 
 # Install Amber
 RUN conda install -y -c conda-forge ambertools
-RUN conda install -y -c conda-forge/label/cf202003 ambertools
 ENV AMBERHOME /home/EVB_tutorial/Programs/miniconda3
 
 # Install CATs
