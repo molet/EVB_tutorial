@@ -19,7 +19,7 @@ RUN apt install -y python3-venv python3-pip python3-dev python3-numpy python3-ma
 RUN pip3 install --upgrade pip
 RUN pip3 install ipython
 RUN pip3 install jupyter
-RUN pip3 install gdown==4.4.0
+RUN pip3 install --upgrade --no-cache-dir gdown
 
 # Download the tutorial
 WORKDIR /home
