@@ -31,10 +31,10 @@ RUN mkdir -p /home/EVB_tutorial/Programs
 WORKDIR /home/EVB_tutorial/Programs
 
 # Install Intel Fortran for XdynBP
-RUN wget https://registrationcenter-download.intel.com/akdlm/irc_nas/18481/l_fortran-compiler_p_2022.0.2.83.sh
-RUN bash l_fortran-compiler_p_2022.0.2.83.sh -a -s --eula accept --install-dir=/home/EVB_tutorial/Programs/intel
-ENV PATH $PATH:/home/EVB_tutorial/Programs/intel/mpi/2021.5.1//libfabric/bin:/home/EVB_tutorial/Programs/intel/mpi/2021.5.1//bin:/home/EVB_tutorial/Programs/intel/debugger/2021.5.0/gdb/intel64/bin:/home/EVB_tutorial/Programs/intel/compiler/2022.0.2/linux/bin/intel64:/home/EVB_tutorial/Programs/intel/compiler/2022.0.2/linux/bin
-ENV LD_LIBRARY_PATH /home/EVB_tutorial/Programs/intel/mpi/2021.5.1//libfabric/lib:/home/EVB_tutorial/Programs/intel/mpi/2021.5.1//lib/release:/home/EVB_tutorial/Programs/intel/mpi/2021.5.1//lib:/home/EVB_tutorial/Programs/intel/debugger/2021.5.0/gdb/intel64/lib:/home/EVB_tutorial/Programs/intel/debugger/2021.5.0/libipt/intel64/lib:/home/EVB_tutorial/Programs/intel/debugger/2021.5.0/dep/lib:/home/EVB_tutorial/Programs/intel/compiler/2022.0.2/linux/lib:/home/EVB_tutorial/Programs/intel/compiler/2022.0.2/linux/lib/x64:/home/EVB_tutorial/Programs/intel/compiler/2022.0.2/linux/compiler/lib/intel64_lin
+RUN wget https://registrationcenter-download.intel.com/akdlm/irc_nas/19105/l_fortran-compiler_p_2023.0.0.25394.sh
+RUN bash l_fortran-compiler_p_2023.0.0.25394.sh -a -s --eula accept --install-dir=/home/EVB_tutorial/Programs/intel
+ENV PATH $PATH:/home/EVB_tutorial/Programs/intel/mpi/2021.8.0//libfabric/bin:/home/EVB_tutorial/Programs/intel/mpi/2021.8.0//bin:/home/EVB_tutorial/Programs/intel/debugger/2023.0.0/gdb/intel64/bin:/home/EVB_tutorial/Programs/intel/compiler/2023.0.0/linux/bin/intel64:/home/EVB_tutorial/Programs/intel/compiler/2023.0.0/linux/bin
+ENV LD_LIBRARY_PATH /home/EVB_tutorial/Programs/intel/mpi/2021.8.0//libfabric/lib:/home/EVB_tutorial/Programs/intel/mpi/2021.8.0//lib/release:/home/EVB_tutorial/Programs/intel/mpi/2021.8.0//lib:/home/EVB_tutorial/Programs/intel/debugger/2023.0.0/gdb/intel64/lib:/home/EVB_tutorial/Programs/intel/debugger/2023.0.0/libipt/intel64/lib:/home/EVB_tutorial/Programs/intel/debugger/2023.0.0/dep/lib:/home/EVB_tutorial/Programs/intel/compiler/2023.0.0/linux/lib:/home/EVB_tutorial/Programs/intel/compiler/2023.0.0/linux/lib/x64:/home/EVB_tutorial/Programs/intel/compiler/2023.0.0/linux/compiler/lib/intel64_lin
 
 # Install Miniconda for Amber
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
