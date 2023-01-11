@@ -5,8 +5,6 @@ This repository includes a guide to download and install all necessary softwares
 In order to avoid compilation issues on different architectures and operating systems, we will use [Docker](https://docs.docker.com/get-started/overview/).
 Docker provides a lightweight and fast virtual machine on which we can run the corresponding programs (for more information visit the [Docker documentation](https://docs.docker.com/)).
 
-NOTE: Apple M1 series is currently not supported.
-
 ## Install Docker
 
 1. [Download and install Docker](https://docs.docker.com/get-docker/) for your corresponding platform. For [Mac](https://docs.docker.com/desktop/mac/install/) and [Windows](https://docs.docker.com/desktop/windows/install/) it is the Docker Desktop, while for [Linux](https://docs.docker.com/engine/install/) it is the Docker Engine.
@@ -33,18 +31,24 @@ Once you have the Dockerfile on your machine, enter to its directory and build t
 docker build -t evb_image:latest .
 ```
 
-This will build the virtual machine `evb_image` with the tag `latest`. It is a Linux Ubuntu 18.04 operating system with the following programs:
+For M1 Mac series we need to set the target platform to linux/amd64:
+
+```
+docker build --platform=linux/amd64 -t evb_image:latest .
+```
+
+These will build the virtual machine `evb_image` with the tag `latest`. It is a Linux Ubuntu 22.04 operating system with the following programs:
 - [Python](https://www.python.org/) - efficient high-level programming language
 - [Jupyter Notebook](https://jupyter.org/) - server-client application that allows editing and running notebook documents via a web browser
 - [Amber/AmberTools](https://ambermd.org/index.php) - biomolecular simulation program package
 - [CATs](https://github.com/kulhanek/cats) - conversion and analysis tools for topology and coordinate manipulation
 - XdynBP - Empirical Valence Bond molecular dynamics program package
 
-Depending on your machine and internet connection, the image should be built within 15-20 minutes.
+Depending on your machine and internet connection, the image should be built within 20-30 minutes (for M1 Mac it might take longer).
 
 ## Run a Container over the Docker Image
 
-You can run the image inside of a container by using [`docker run`](https://docs.docker.com/engine/reference/commandline/run/):
+You can run the image inside of a container by using [`docker run`](https://docs.docker.com/engine/reference/commandline/run/) (for M1 Mac add the saem flag for platform as used in bulding the image, i.e. `--platform=linux/amd64`):
 
 ```
 docker run --name=evb_container --ulimit stack=-1 --publish=9999:9999 --entrypoint /bin/bash --workdir="/home/EVB_tutorial" --rm -it evb_image:latest
