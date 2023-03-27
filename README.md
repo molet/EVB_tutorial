@@ -48,7 +48,7 @@ Depending on your machine and internet connection, the image should be built wit
 
 ## Run a Container over the Docker Image
 
-You can run the image inside of a container by using [`docker run`](https://docs.docker.com/engine/reference/commandline/run/) (for M1 Mac add the saem flag for platform as used in bulding the image, i.e. `--platform=linux/amd64`):
+You can run the image inside of a container by using [`docker run`](https://docs.docker.com/engine/reference/commandline/run/) (for M1 Mac add the flag for platform as used in bulding the image, i.e. `--platform=linux/amd64`):
 
 ```
 docker run --name=evb_container --ulimit stack=-1 --publish=9999:9999 --entrypoint /bin/bash --workdir="/home/EVB_tutorial" --rm -it evb_image:latest
